@@ -30,17 +30,17 @@ const Register = () => {
         e.preventDefault();
         const valid_user = USER_REGEX.test(user);
         const valid_pwd = PWD_REGEX.test(user);
-        if(!valid_user){
-            setErrMsg("Invalid Username. Username should be alphanumeric.");
-            errRef.current.style.color = 'red';
-            return
-        }
+        // if(!valid_user){
+        //     setErrMsg("Invalid Username. Username should be alphanumeric.");
+        //     errRef.current.style.color = 'red';
+        //     return
+        // }
 
-        if(!valid_pwd){
-            setErrMsg("Invalid Password.");
-            errRef.current.style.color = 'red';
-            return
-        }
+        // if(!valid_pwd){
+        //     setErrMsg("Invalid Password.");
+        //     errRef.current.style.color = 'red';
+        //     return
+        // }
         setUser('');
         setPwd('');
         checkRef.current.checked = false;
