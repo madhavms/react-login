@@ -1,4 +1,5 @@
 import {useRef, useState, useEffect} from 'react'
+import {useNavigate} from 'react-router-dom'
 
 const USER_REGEX = new RegExp('[a-zA-Z0-9]');
 const PWD_REGEX = /^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*[^\w\s])\S{8,}$/;
@@ -8,6 +9,8 @@ const Register = () => {
     const errRef = useRef();
     const pwdRef = useRef();
     const checkRef = useRef();
+
+    const navigate = useNavigate();
 
     const [user, setUser] = useState('');
     const [pwd, setPwd] = useState('');
@@ -21,6 +24,11 @@ const Register = () => {
     useEffect(() => {
         setErrMsg('');
     }, [user, pwd]) // Reset error message when user has started to type user or pwd.
+
+    useEffect(() => {
+        if(success) return navigate('/home')
+        //Redirect to home page on login success.
+    }, [success])
 
     function togglePwdVisible(){
         pwdRef.current.type = pwdRef.current.type === 'password' ? 'text' : 'password';
