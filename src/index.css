@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#showpassword{
+  margin-left: -200px;
+  margin-top: 25px;
+}
+
+#rgstr-btn{
+  padding: 5px 140px;
+  margin-left:255px;
+}
